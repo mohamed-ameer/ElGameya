@@ -8,6 +8,7 @@ def after_install():
     set_navbar_settings()
     set_website_settings()
     set_workspace_settings()
+    add_switch_language_to_navbar_settings()
 
 def before_migrate():
     """Runs before database migration"""
@@ -21,6 +22,7 @@ def after_migrate():
     set_navbar_settings()
     set_website_settings()
     set_workspace_settings()
+    add_switch_language_to_navbar_settings()
 
 def set_app_logo():
     """Sets app logo in navbar"""
@@ -80,6 +82,8 @@ def set_workspace_settings():
             ws.save()
 
 def add_switch_language_to_navbar_settings():
+    """ Add switch language to navbar settings """
+    print("Adding Switch Language to Navbar Settings")
     navbar_settings = frappe.get_single("Navbar Settings")
     if frappe.db.exists("Navbar Item", {"item_label": "Toggle Language"}):
         return
