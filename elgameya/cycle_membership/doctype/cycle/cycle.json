@@ -1,189 +1,200 @@
 {
- "actions": [],
- "autoname": ".##########",
- "creation": "2026-09-14 21:56:23.159870",
- "default_view": "List",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "basic_information_section",
-  "column_break_1",
-  "cycle_code",
-  "duration",
-  "number_of_seats",
-  "available_seats",
-  "column_break_2",
-  "posting_date",
-  "start_date",
-  "end_date",
-  "status",
-  "column_break_3",
-  "cycle_amount",
-  "members_section",
-  "cycle_members",
-  "section_break_mha7",
-  "amended_from"
- ],
- "fields": [
-  {
-   "fieldname": "section_break_mha7",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Cycle",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "basic_information_section",
-   "fieldtype": "Section Break",
-   "label": "Basic Information"
-  },
-  {
-   "fieldname": "cycle_code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Cycle Code",
-   "no_copy": 1,
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "duration",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Duration",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "number_of_seats",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Number Of Seats",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "start_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Start Date",
-   "reqd": 1
-  },
-  {
-   "default": "Today",
-   "fieldname": "posting_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Posting Date",
-   "read_only": 1
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Status",
-   "options": "Draft"
-  },
-  {
-   "fieldname": "members_section",
-   "fieldtype": "Section Break",
-   "label": "Members"
-  },
-  {
-   "fieldname": "cycle_members",
-   "fieldtype": "Table",
-   "options": "Cycle Member"
-  },
-  {
-   "fieldname": "column_break_1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "cycle_amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Cycle Amount",
-   "non_negative": 1,
-   "options": "Company:company:default_currency",
-   "precision": "2",
-   "reqd": 1
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "End Date",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "available_seats",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Available Seats",
-   "non_negative": 1,
-   "read_only": 1
-  }
- ],
- "grid_page_length": 50,
- "index_web_pages_for_search": 1,
- "is_submittable": 1,
- "links": [],
- "modified": "2026-09-14 22:37:43.232511",
- "modified_by": "Administrator",
- "module": "Cycle Membership",
- "name": "Cycle",
- "naming_rule": "Expression",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "submit": 1,
-   "write": 1
-  },
-  {
-   "read": 1,
-   "role": "Client"
-  }
- ],
- "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": [],
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+    "actions": [],
+    "autoname": ".##########",
+    "creation": "2026-09-14 21:56:23.159870",
+    "default_view": "List",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "basic_information_section",
+        "column_break_1",
+        "cycle_code",
+        "duration",
+        "number_of_seats",
+        "joined_seats",
+        "available_seats",
+        "column_break_2",
+        "posting_date",
+        "start_date",
+        "end_date",
+        "status",
+        "column_break_3",
+        "cycle_amount",
+        "members_section",
+        "cycle_members",
+        "section_break_mha7",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_mha7",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Cycle",
+            "print_hide": 1,
+            "read_only": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "basic_information_section",
+            "fieldtype": "Section Break",
+            "label": "Basic Information"
+        },
+        {
+            "fieldname": "cycle_code",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Cycle Code",
+            "no_copy": 1,
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "duration",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Duration",
+            "non_negative": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "number_of_seats",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Number Of Seats",
+            "non_negative": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "start_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Start Date",
+            "reqd": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "posting_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Posting Date",
+            "read_only": 1
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Status",
+            "options": "Draft\nActive\nCompleted\nCancelled",
+            "read_only": 1
+        },
+        {
+            "fieldname": "members_section",
+            "fieldtype": "Section Break",
+            "label": "Members"
+        },
+        {
+            "fieldname": "cycle_members",
+            "fieldtype": "Table",
+            "options": "Cycle Member"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "cycle_amount",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Cycle Amount",
+            "non_negative": 1,
+            "options": "Company:company:default_currency",
+            "precision": "2",
+            "reqd": 1
+        },
+        {
+            "fieldname": "end_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "End Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "available_seats",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Available Seats",
+            "non_negative": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "joined_seats",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Joined Seats",
+            "non_negative": 1,
+            "read_only": 1
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2026-09-14 22:37:43.232511",
+    "modified_by": "Administrator",
+    "module": "Cycle Membership",
+    "name": "Cycle",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Client"
+        }
+    ],
+    "row_format": "Dynamic",
+    "rows_threshold_for_grid_search": 20,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1,
+    "track_seen": 1,
+    "track_views": 1
 }

@@ -29,17 +29,18 @@
   },
   {
    "fieldname": "seat_number",
-   "fieldtype": "Int",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Seat Number",
-   "non_negative": 1,
    "reqd": 1
   },
   {
+   "default": "Approved",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status"
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected\nCancelled"
   }
  ],
  "grid_page_length": 50,

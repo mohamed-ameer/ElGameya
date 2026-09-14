@@ -125,6 +125,7 @@
   {
    "fieldname": "profile_image_preview",
    "fieldtype": "Image",
+   "in_preview": 1,
    "options": "profile_image"
   },
   {
@@ -222,12 +223,14 @@
   {
    "fieldname": "nid_front_attachment_preview",
    "fieldtype": "Image",
+   "in_preview": 1,
    "label": "NID Front Image",
    "options": "nid_front_attachment"
   },
   {
    "fieldname": "nid_back_attachment_preview",
    "fieldtype": "Image",
+   "in_preview": 1,
    "label": "NID Back Image",
    "options": "nid_back_attachment"
   },
@@ -340,7 +343,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-14 21:50:23.452304",
+ "modified": "2026-09-14 23:16:23.365458",
  "modified_by": "Administrator",
  "module": "Cycle Membership",
  "name": "Client",
@@ -363,6 +366,7 @@
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "search_fields": "full_name, phone, email, national_id",
+ "show_preview_popup": 1,
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
