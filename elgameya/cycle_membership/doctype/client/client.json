@@ -343,7 +343,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-14 23:16:23.365458",
+ "modified": "2026-09-15 00:00:31.886405",
  "modified_by": "Administrator",
  "module": "Cycle Membership",
  "name": "Client",
@@ -361,6 +361,10 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
   }
  ],
  "row_format": "Dynamic",
