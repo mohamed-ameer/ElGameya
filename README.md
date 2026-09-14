@@ -16,7 +16,7 @@ ElGameya is a custom business application built on the Frappe Framework by the E
 
 1. Install the app:
 ```bash
-bench get-app --branch main elgameya <repo-url>
+bench get-app --branch main elgameya https://github.com/mohamed-ameer/ElGameya.git
 ```
 
 2. Install to site:
