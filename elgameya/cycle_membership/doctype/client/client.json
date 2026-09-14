@@ -67,7 +67,6 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "First Name",
    "reqd": 1
   },
@@ -79,7 +78,6 @@
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Last Name",
    "reqd": 1
   },
@@ -91,6 +89,8 @@
   {
    "fieldname": "phone",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Phone",
    "options": "Phone",
    "reqd": 1
@@ -98,6 +98,8 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Email",
    "options": "Email"
   },
@@ -158,6 +160,8 @@
   {
    "fieldname": "national_id",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "National ID",
    "reqd": 1
   },
@@ -336,7 +340,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-14 21:46:12.101367",
+ "modified": "2026-09-14 21:50:23.452304",
  "modified_by": "Administrator",
  "module": "Cycle Membership",
  "name": "Client",
