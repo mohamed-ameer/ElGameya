@@ -1,0 +1,367 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-09-14 20:32:58.800516",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "basic_information_section",
+  "column_break_1",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "full_name",
+  "column_break_2",
+  "phone",
+  "email",
+  "gender",
+  "column_break_3",
+  "user",
+  "profile_image",
+  "profile_image_preview",
+  "official_information_section",
+  "column_break_4",
+  "national_id",
+  "date_of_birth",
+  "age",
+  "academic_qualification",
+  "marital_status",
+  "military_status",
+  "column_break_5",
+  "national_id_expiry_date",
+  "nid_front_attachment",
+  "nid_back_attachment",
+  "national_id_address",
+  "column_break_6",
+  "nid_front_attachment_preview",
+  "nid_back_attachment_preview",
+  "address_tab",
+  "housing_information_section",
+  "column_break_7",
+  "state",
+  "city",
+  "street",
+  "column_break_8",
+  "postal_code",
+  "telephone",
+  "house_number",
+  "column_break_9",
+  "address_details",
+  "location_section",
+  "latitude",
+  "longitude",
+  "gps_url",
+  "location_map",
+  "attachments_tab",
+  "client_attachments",
+  "connections_tab"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Small Text",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "no_copy": 1,
+   "options": "User",
+   "unique": 1
+  },
+  {
+   "fieldname": "profile_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
+  },
+  {
+   "fieldname": "profile_image_preview",
+   "fieldtype": "Image",
+   "options": "profile_image"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": ".######",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "official_information_section",
+   "fieldtype": "Section Break",
+   "label": "Official Information"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "national_id",
+   "fieldtype": "Data",
+   "label": "National ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "read_only": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "academic_qualification",
+   "fieldtype": "Select",
+   "label": "Academic Qualification",
+   "options": "\nIlliterate\nRead and Write\nPrimary\nPreparatory\nGeneral Secondary\nTechnical Secondary\nHigh Institute\nBachelor Degree\nLicentiate Degree\nPostgraduate Diploma\nMaster Degree\nDoctorate"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nDivorced\nWidowed"
+  },
+  {
+   "fieldname": "military_status",
+   "fieldtype": "Select",
+   "label": "Military Status",
+   "options": "\nNot Applicable\nCompleted\nPermanently Exempted\nTemporarily Exempted\nPostponed\nCurrently Serving"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "national_id_expiry_date",
+   "fieldtype": "Date",
+   "label": "National ID Expiry Date"
+  },
+  {
+   "fieldname": "nid_front_attachment",
+   "fieldtype": "Attach Image",
+   "label": "NID Front Attachment"
+  },
+  {
+   "fieldname": "nid_back_attachment",
+   "fieldtype": "Attach Image",
+   "label": "NID Back Attachment"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nid_front_attachment_preview",
+   "fieldtype": "Image",
+   "label": "NID Front Image",
+   "options": "nid_front_attachment"
+  },
+  {
+   "fieldname": "nid_back_attachment_preview",
+   "fieldtype": "Image",
+   "label": "NID Back Image",
+   "options": "nid_back_attachment"
+  },
+  {
+   "fieldname": "national_id_address",
+   "fieldtype": "Small Text",
+   "label": "National ID Address"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "housing_information_section",
+   "fieldtype": "Section Break",
+   "label": "Housing Information"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "street",
+   "fieldtype": "Data",
+   "label": "Street"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code"
+  },
+  {
+   "fieldname": "telephone",
+   "fieldtype": "Data",
+   "label": "Telephone"
+  },
+  {
+   "fieldname": "house_number",
+   "fieldtype": "Data",
+   "label": "House Number"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_details",
+   "fieldtype": "Small Text",
+   "label": "Address Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "gps_url",
+   "fieldtype": "Data",
+   "label": "GPS URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "location_map",
+   "fieldtype": "Geolocation"
+  },
+  {
+   "fieldname": "address_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "attachments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "client_attachments",
+   "fieldtype": "Table",
+   "options": "Client Attachment"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-14 21:46:12.101367",
+ "modified_by": "Administrator",
+ "module": "Cycle Membership",
+ "name": "Client",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "full_name, phone, email, national_id",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}
