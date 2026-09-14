@@ -37,7 +37,7 @@ def set_system_settings():
     settings.language = "ar"
     settings.country = "Egypt"
     settings.currency = "EGP"
-    settings.timezone = "Africa/Cairo"
+    settings.time_zone = "Africa/Cairo"
     settings.session_expiry = "12:00"
     settings.login_with_email_link = False
     settings.store_attached_pdf_document = False
