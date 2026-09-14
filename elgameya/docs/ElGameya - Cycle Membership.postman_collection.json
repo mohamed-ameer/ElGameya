@@ -1,0 +1,357 @@
+{
+  "info": {
+    "_postman_id": "6f5c419b-6018-4cba-876b-24b19d07904e",
+    "name": "ElGameya - Cycle Membership",
+    "description": "Minimal collection for the Cycle Membership module: authentication, Client records, and the Cycle join-request API.\n\nAuth: this collection defaults to API Key/Secret (token) auth, set as collection-level Authorization - generate a key pair in Desk under User > API Access > Generate Keys, then fill in the `api_key` / `api_secret` collection variables. Token auth avoids the CSRF-token dance that session-cookie login requires for POST requests, which is why the Login request below is offered only as an alternative.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19584619",
+    "_collection_link": "https://go.postman.co/collection/19584619-6f5c419b-6018-4cba-876b-24b19d07904e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login (Session Cookie - alternative to token auth)",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "usr",
+                  "value": "{{usr}}",
+                  "type": "text"
+                },
+                {
+                  "key": "pwd",
+                  "value": "{{pwd}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/method/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "method",
+                "login"
+              ]
+            },
+            "description": "Only needed if you are not using API Key/Secret auth. On success Postman's cookie jar stores the `sid` session cookie automatically for this domain. Any POST made afterwards under session auth still needs an X-Frappe-CSRF-Token header (from frappe.csrf_token in the boot response) - token auth below skips this entirely, which is why it's the collection default."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Logged In User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/method/frappe.auth.get_logged_user",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "method",
+                "frappe.auth.get_logged_user"
+              ]
+            },
+            "description": "Quick sanity check that your auth (token or session) is working."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Client",
+      "item": [
+        {
+          "name": "List Clients",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/resource/Client?fields=[\"name\",\"full_name\",\"phone\",\"national_id\"]&limit_page_length=20",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "resource",
+                "Client"
+              ],
+              "query": [
+                {
+                  "key": "fields",
+                  "value": "[\"name\",\"full_name\",\"phone\",\"national_id\"]"
+                },
+                {
+                  "key": "limit_page_length",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Client",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/resource/Client/{{client_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "resource",
+                "Client",
+                "{{client_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Ahmed\",\n  \"last_name\": \"Mostafa\",\n  \"phone\": \"01012345678\",\n  \"national_id\": \"29001150100114\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/resource/Client",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "resource",
+                "Client"
+              ]
+            },
+            "description": "national_id here is a structurally valid sample (checksum-correct) so this request works as-is against a fresh site."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cycle",
+      "item": [
+        {
+          "name": "List Cycles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/resource/Cycle?fields=[\"name\",\"cycle_code\",\"status\",\"number_of_seats\",\"available_seats\"]&limit_page_length=20",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "resource",
+                "Cycle"
+              ],
+              "query": [
+                {
+                  "key": "fields",
+                  "value": "[\"name\",\"cycle_code\",\"status\",\"number_of_seats\",\"available_seats\"]"
+                },
+                {
+                  "key": "limit_page_length",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Cycle",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/resource/Cycle/{{cycle_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "resource",
+                "Cycle",
+                "{{cycle_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Available Seat Numbers (doc method)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/resource/Cycle/{{cycle_id}}?run_method=get_available_seat_numbers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "resource",
+                "Cycle",
+                "{{cycle_id}}"
+              ],
+              "query": [
+                {
+                  "key": "run_method",
+                  "value": "get_available_seat_numbers"
+                }
+              ]
+            },
+            "description": "Calls the whitelisted Cycle.get_available_seat_numbers() instance method."
+          },
+          "response": []
+        },
+        {
+          "name": "Join Cycle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cycle\": \"{{cycle_id}}\",\n  \"seat_number\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/method/elgameya.api.v1.cycle.join_cycle",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "method",
+                "elgameya.api.v1.cycle.join_cycle"
+              ]
+            },
+            "description": "Requests seat 1 on the given Cycle as the Client linked to the authenticated user's account. Creates a Pending Cycle Member row - still needs staff approval. Rate-limited to 10 requests/60s per (IP, cycle)."
+          },
+          "response": []
+        },
+        {
+          "name": "Join Cycle By Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cycle\": \"{{cycle_id}}\",\n  \"seat_number\": 2,\n  \"client\": \"{{client_id}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/method/elgameya.api.v1.cycle.join_cycle",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "method",
+                "elgameya.api.v1.cycle.join_cycle"
+              ]
+            },
+            "description": "Passing `client` is only permitted for a System Manager - any other caller gets a PermissionError."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{api_key}}:{{api_secret}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://elgamya.dev.com:8000"
+    },
+    {
+      "key": "api_key",
+      "value": ""
+    },
+    {
+      "key": "api_secret",
+      "value": ""
+    },
+    {
+      "key": "usr",
+      "value": ""
+    },
+    {
+      "key": "pwd",
+      "value": ""
+    },
+    {
+      "key": "client_id",
+      "value": ""
+    },
+    {
+      "key": "cycle_id",
+      "value": ""
+    }
+  ]
+}
