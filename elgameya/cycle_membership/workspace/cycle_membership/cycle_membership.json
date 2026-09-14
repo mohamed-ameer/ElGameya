@@ -1,0 +1,119 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"cm-h-overview\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"cm-nc-active\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Cycles\",\"col\":4}},{\"id\":\"cm-nc-clients\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Clients\",\"col\":4}},{\"id\":\"cm-nc-seats\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Available Seats\",\"col\":4}},{\"id\":\"cm-h-quick\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"cm-s-cycle\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cycle\",\"col\":4}},{\"id\":\"cm-s-client\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Client\",\"col\":4}},{\"id\":\"cm-s-report\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cycle Overview\",\"col\":4}},{\"id\":\"cm-sp-1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cm-h-manage\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Manage</b></span>\",\"col\":12}},{\"id\":\"cm-card-masters\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":6}},{\"id\":\"cm-card-reports\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":6}}]",
+ "creation": "2026-09-14 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "fa-solid-hand-holding-dollar",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Cycle Membership",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "description": "Rotating savings cycles - seats, schedule and members.",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cycle",
+   "link_count": 0,
+   "link_to": "Cycle",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "description": "People who can join a cycle.",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client",
+   "link_count": 0,
+   "link_to": "Client",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Cycle Overview",
+   "link_count": 0,
+   "link_to": "Cycle Overview",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-09-14 23:35:17.279425",
+ "modified_by": "Administrator",
+ "module": "Cycle Membership",
+ "name": "Cycle Membership",
+ "number_cards": [
+  {
+   "label": "Active Cycles",
+   "number_card_name": "Active Cycles"
+  },
+  {
+   "label": "Total Clients",
+   "number_card_name": "Total Clients"
+  },
+  {
+   "label": "Available Seats",
+   "number_card_name": "Available Seats"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "label": "Cycle",
+   "link_to": "Cycle",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "label": "Client",
+   "link_to": "Client",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "label": "Cycle Overview",
+   "link_to": "Cycle Overview",
+   "report_ref_doctype": "Cycle",
+   "type": "Report"
+  }
+ ],
+ "title": "Cycle Membership"
+}
