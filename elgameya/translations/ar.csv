@@ -1,3 +1,89 @@
 Toggle Language,تبديل اللغة
 My Profile,ملفي الشخصي
 My Settings,إعداداتي
+Academic Qualification,المؤهل الدراسي
+Address Details,تفاصيل العنوان
+Age,العمر
+All fields must be filled before saving.,يجب ملء جميع الحقول قبل الحفظ.
+Approved,معتمد
+Attachment Type,نوع المرفق
+Available,متاح
+Available Seats,المقاعد المتاحة
+Bachelor Degree,بكالوريوس
+Basic Information,معلومات أساسية
+Cannot submit {0}: Row(s) {1} are still Pending. Approve or reject them first.,لا يمكن اعتماد {0}: الصف (الصفوف) {1} ما زالت قيد الانتظار. يرجى الموافقة عليها أو رفضها أولاً.
+Cannot submit {0}: {1} seat(s) are still available. Fill all seats before starting the cycle.,لا يمكن اعتماد {0}: لا يزال هناك {1} مقعد (مقاعد) متاح. يرجى شغل جميع المقاعد قبل بدء الجمعية.
+Client Attachment,مرفق العميل
+Client Name,اسم العميل
+Currently Serving,يؤدي الخدمة العسكرية حاليًا
+Cycle,الجمعية
+Cycle Amount,قيمة الجمعية
+Cycle Code,كود الجمعية
+Cycle Member,عضو الجمعية
+Cycle Membership,عضوية الجمعية
+Cycle Not Fully Subscribed,الجمعية غير مكتملة الاشتراك
+Cycle Overview,نظرة عامة على الجمعية
+Cycle Status,حالة الجمعية
+Date of Birth,تاريخ الميلاد
+Descriptions,الأوصاف
+Divorced,مطلق
+Doctorate,دكتوراه
+Duplicate Rows,صفوف مكررة
+Duplicate rows found! Row {row1} and Row {row2} have the same values for {fields}.,تم العثور على صفوف مكررة! الصف {row1} والصف {row2} لهما نفس القيم لـ {fields}.
+ElGameya Settings,إعدادات الجمعية
+Elgameya,الجمعية
+GPS URL,رابط الموقع الجغرافي
+General Secondary,الثانوية العامة
+High Institute,معهد عالي
+House Number,رقم المنزل
+Housing Information,معلومات السكن
+Illiterate,أمي
+Invalid National ID,الرقم القومي غير صالح
+Invalid National ID structure.,تركيب الرقم القومي غير صالح.
+Invalid Seat,مقعد غير صالح
+Join Date,تاريخ الانضمام
+Joined,منضم
+Joined Seats,المقاعد المشغولة
+Latitude,خط العرض
+Licentiate Degree,درجة الإجازة
+Longitude,خط الطول
+Marital Status,الحالة الاجتماعية
+Married,متزوج
+Master Degree,ماجستير
+Member Status,حالة العضو
+Military Status,الموقف من التجنيد
+NID Back Attachment,مرفق الرقم القومي (الخلف)
+NID Back Image,صورة الرقم القومي (الخلف)
+NID Front Attachment,مرفق الرقم القومي (الأمام)
+NID Front Image,صورة الرقم القومي (الأمام)
+National ID,الرقم القومي
+National ID Address,عنوان الرقم القومي
+National ID Expiry Date,تاريخ انتهاء الرقم القومي
+National ID must contain exactly 14 digits.,يجب أن يتكون الرقم القومي من 14 رقمًا بالضبط.
+Not Applicable,لا ينطبق
+Number Of Seats,عدد المقاعد
+Official Information,المعلومات الرسمية
+Pending Join Requests,طلبات انضمام قيد الانتظار
+Permanently Exempted,معفى بصفة دائمة
+Postgraduate Diploma,دبلوم دراسات عليا
+Posting Date,تاريخ الترحيل
+Postponed,مؤجل
+Preparatory,إعدادية
+Profile Image,الصورة الشخصية
+Read and Write,يقرأ ويكتب
+Row {idx}: Seat {seat} does not exist in a cycle of {total} seats.,الصف {idx}: المقعد {seat} غير موجود في جمعية تحتوي على {total} مقعد.
+Row {idx}: combination ({fields}) already exists in document '{parent}'.,الصف {idx}: التوليفة ({fields}) موجودة بالفعل في المستند '{parent}'.
+Seat #,رقم المقعد
+Seat Number,رقم المقعد
+Seats,المقاعد
+Single,أعزب
+Street,الشارع
+Technical Secondary,الثانوية الفنية
+Telephone,الهاتف
+Temporarily Exempted,معفى بصفة مؤقتة
+Widowed,أرمل
+naming_series,سلسلة التسمية
+Male,ذكر
+Female,انثى
+{0} is not a valid Egyptian National ID.,{0} ليس رقمًا قوميًا مصريًا صالحًا.
+{0} is not a valid Egyptian phone number.,{0} ليس رقم هاتف مصري صالح.
