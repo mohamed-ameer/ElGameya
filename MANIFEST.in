@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include elgameya *.css
+recursive-include elgameya *.csv
+recursive-include elgameya *.html
+recursive-include elgameya *.ico
+recursive-include elgameya *.js
+recursive-include elgameya *.json
+recursive-include elgameya *.md
+recursive-include elgameya *.png
+recursive-include elgameya *.py
+recursive-include elgameya *.svg
+recursive-include elgameya *.txt
+recursive-exclude elgameya *.pyc
