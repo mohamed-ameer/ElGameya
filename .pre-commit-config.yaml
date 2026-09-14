@@ -1,5 +1,5 @@
-exclude: 'node_modules|.git'
-default_stages: [pre-commit]
+exclude: 'node_modules|.git|pre-commit-errors.log'
+default_install_hook_types: [pre-commit, commit-msg]
 fail_fast: false
 
 
@@ -10,60 +10,64 @@ repos:
       - id: trailing-whitespace
         files: "elgameya.*"
         exclude: ".*json$|.*txt$|.*csv|.*md|.*svg"
+      - id: no-commit-to-branch
+        args: ['--branch', 'develop']
       - id: check-merge-conflict
       - id: check-ast
       - id: check-json
       - id: check-toml
       - id: check-yaml
       - id: debug-statements
+        exclude: |
+          (?x)^(
+                elgameya/tests/classes/context_managers\.py$|
+                .*/__init__.py$
+          )$
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.1
+    rev: v0.13.2
     hooks:
       - id: ruff
         name: "Run ruff import sorter"
         args: ["--select=I", "--fix"]
 
       - id: ruff
-        name: "Run ruff linter"
+        name: "Run ruff linter and apply fixes"
+        args: [--fix]
+        exclude: |
+          (?x)^(
+                .*/__init__.py$|
+                .*/.*test.*\.py$
+          )$
 
       - id: ruff-format
-        name: "Run ruff formatter"
+        name: "Format Python code"
+        exclude: |
+          (?x)^(
+                .*/__init__.py$|
+                .*/.*test.*\.py$
+          )$
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.7.1
     hooks:
       - id: prettier
         types_or: [javascript, vue, scss]
-        # Ignore any files that might contain jinja / bundles
+        args: ["--use-tabs", "--tab-width=4"]
         exclude: |
             (?x)^(
                 elgameya/public/dist/.*|
                 .*node_modules.*|
                 .*boilerplate.*|
+                elgameya/www/website_script.js|
                 elgameya/templates/includes/.*|
-                elgameya/public/js/lib/.*
+                elgameya/public/js/lib/.*|
+                elgameya/website/doctype/website_theme/website_theme_template.scss
             )$
 
-
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.44.0
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.22.0
     hooks:
-      - id: eslint
-        types_or: [javascript]
-        args: ['--quiet']
-        # Ignore any files that might contain jinja / bundles
-        exclude: |
-            (?x)^(
-                elgameya/public/dist/.*|
-                cypress/.*|
-                .*node_modules.*|
-                .*boilerplate.*|
-                elgameya/templates/includes/.*|
-                elgameya/public/js/lib/.*
-            )$
-
-ci:
-    autoupdate_schedule: weekly
-    skip: []
-    submodules: false
+      - id: commitlint
+        stages: [commit-msg]
+        additional_dependencies: ['conventional-changelog-conventionalcommits']

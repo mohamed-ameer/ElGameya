@@ -8,7 +8,38 @@ app_license = "mit"
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["erpnext"]
+
+# Website Context & Branding
+# ----------
+
+app_logo_url = "/assets/elgameya/images/branding/logo.png"
+
+website_context = {
+    "favicon": "/assets/elgameya/images/branding/favicon.png",
+    "splash_image": "/assets/elgameya/images/branding/logo.png"
+}
+
+# Includes in <head>
+# ------------------
+# include js, css files in header of desk.html
+app_include_js = ["elgameya.bundle.js"]
+# include js, css files in header of web template
+web_include_css = "/assets/elgameya/css/website.css"
+
+# Svg Icons
+# ------------------
+# include app icons in desk
+app_include_icons = [
+    "elgameya/icons/icons.svg",
+    "elgameya/icons/elgameya_icons.svg"
+]
+
+# Installation
+# ------------
+
+after_install = "elgameya.utils.install.after_install"
+after_migrate = "elgameya.utils.install.after_migrate"
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
