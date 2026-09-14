@@ -8,7 +8,7 @@ def api_error(message, type=None):
     elif type == 'Perm':
         frappe.local.response["http_status_code"] = 403
         frappe.local.response['message'] = message
-        raise frappe.AuthenticationError(message)
+        raise frappe.PermissionError(message)
     elif type == 'Exist':
         frappe.local.response["http_status_code"] = 404
         frappe.local.response['message'] = message

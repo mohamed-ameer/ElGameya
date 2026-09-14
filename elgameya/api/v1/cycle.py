@@ -37,6 +37,11 @@ def join_cycle(cycle, seat_number, client=None):
 
 def get_requesting_client(client):
 	if client:
+		if "System Manager" not in frappe.get_roles():
+			api_error(
+				_("You are not allowed to apply a join request on behalf of another client."),
+				"Perm",
+			)
 		if not frappe.db.exists("Client", client):
 			api_error(_("Client {0} does not exist.").format(client))
 		return client
