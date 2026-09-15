@@ -5,14 +5,14 @@ from num2words.lang_AR import Num2Word_AR
 
 INVALID_AMOUNT_MESSAGE = "قيمة غير صحيحة"
 
-RIYAL_FORMS = {
+POUND_FORMS = {
 	"singular": "جنيه مصري",
 	"dual": "جنيهان مصريان",
 	"plural": "جنيهات مصرية",
 	"accusative": "جنيهًا مصريًا",
 }
 
-HALALA_FORMS = {
+PIASTRE_FORMS = {
 	"singular": "قرش",
 	"dual": "قرشان",
 	"plural": "قروش",
@@ -34,20 +34,20 @@ def currency_to_arabic_words(number_str, include_only_text=True):
 def number_to_arabic_currency(number, include_only_text=True):
 	"""Convert a decimal number to Arabic text using Egyptian Pound (EGP) currency units."""
 	amount = _to_currency_decimal(number)
-	riyals = int(amount)
-	halalas = int((amount - Decimal(riyals)) * 100)
+	pounds = int(amount)
+	piastres = int((amount - Decimal(pounds)) * 100)
 
 	result = []
 
-	if riyals > 0:
-		result.append(_format_currency_part(riyals, RIYAL_FORMS, feminine_number=False))
+	if pounds > 0:
+		result.append(_format_currency_part(pounds, POUND_FORMS, feminine_number=False))
 
-	if halalas > 0:
-		if riyals > 0:
+	if piastres > 0:
+		if pounds > 0:
 			result.append("و")
-		result.append(_format_currency_part(halalas, HALALA_FORMS, feminine_number=True))
+		result.append(_format_currency_part(piastres, PIASTRE_FORMS, feminine_number=True))
 
-	amount_text = " ".join(result).strip() if result else f"صفر {RIYAL_FORMS['singular']}"
+	amount_text = " ".join(result).strip() if result else f"صفر {POUND_FORMS['singular']}"
 	if include_only_text:
 		return f"{LEGAL_AMOUNT_PREFIX} {amount_text} {LEGAL_AMOUNT_SUFFIX}"
 
